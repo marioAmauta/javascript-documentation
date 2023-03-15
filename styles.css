@@ -5,7 +5,9 @@
   --text-primary: #fff;
   --code-color: #caf0f8;
 
-  --mobile-navbar-height: 3.5rem;
+  --mobile-navbar-height: 4rem;
+
+  --main-section-font-size: 1.125rem;
 }
 
 html {
@@ -24,7 +26,7 @@ html {
 
 body {
   font-family: sans-serif;
-  line-height: 1.2;
+  line-height: 1.4;
   background-color: var(--background-primary);
   color: var(--text-primary);
 }
@@ -51,7 +53,7 @@ a {
   width: 1.6rem;
   height: 0.125rem;
   background-color: #fff;
-  border-radius: 0.1rem;
+  border-radius: 0.5rem;
 }
 
 #toggle::before {
@@ -92,8 +94,8 @@ a {
   z-index: 9;
   width: 100%;
   height: var(--mobile-navbar-height);
-  background-color: #1b1b1b;
-  color: white;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
   border-bottom: 1px solid var(--code-color);
 }
 
@@ -106,10 +108,10 @@ a {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: -200%;
+  top: -100vh;
   bottom: 0;
   z-index: 8;
-  transition: 600ms ease-in-out;
+  transition: 500ms ease-in-out;
   width: 100%;
   height: 50vh;
   background-color: var(--background-primary);
@@ -129,16 +131,12 @@ a {
   padding: 1rem 0;
 }
 
-.nav-link:first-of-type {
-  border-top: 1px solid;
-}
-
 .nav-link:hover {
   background-color: var(--background-secondary);
 }
 
 #main-doc {
-  padding-bottom: calc(var(--mobile-navbar-height) + 1rem);
+  margin-bottom: calc(var(--mobile-navbar-height) + 2rem);
 }
 
 .main-section {
@@ -153,7 +151,7 @@ a {
 }
 
 .main-section h2 {
-  padding: 1rem 0;
+  padding: 1rem 0 0 0;
   margin: 0 0 2rem 0.5rem;
   font-size: 2rem;
 }
@@ -164,7 +162,16 @@ a {
 
 .main-section p {
   margin-bottom: 2rem;
-  font-size: 1.2rem;
+  font-size: var(--main-section-font-size);
+}
+
+.main-section ul {
+  margin-left: 2rem;
+}
+
+.main-section li {
+  margin: 1rem 0;
+  font-size: var(--main-section-font-size);
 }
 
 .code-container {
@@ -176,10 +183,11 @@ a {
   margin-bottom: 2rem;
 }
 
-pre {
+.code-container pre {
   width: 100%;
   overflow: auto;
   padding: 1rem;
+  font-size: var(--main-section-font-size);
 }
 
 /* @media screen and (min-width: 48rem) {
