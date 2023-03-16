@@ -22,7 +22,9 @@
   </head>
   <body>
     <nav id="navbar">
-      <header>JavaScript Documentation</header>
+      <header>
+        <a href="#">JavaScript Documentation</a>
+      </header>
       <div class="navbar-links">
         <a
           class="nav-link"
@@ -100,7 +102,7 @@
       <header>
         <a href="#">JavaScript Documentation</a>
       </header>
-      <div id="navbar-links">
+      <div class="mobile-navbar-links">
         <a
           class="nav-link"
           href="#Introduction"
@@ -665,19 +667,25 @@ function square(number) {
       </section>
     </main>
     <script>
-      const $toggle = document.getElementById('toggle');
-      const $navbarLinks = document.getElementById('navbar-links');
+      const $toggle = document.querySelector('#toggle');
+      const $navbarLinks = document.querySelector('.mobile-navbar-links');
 
-      $toggle.addEventListener('click', () => {
+      function toggleNavbar() {
         $toggle.classList.toggle('active');
         $navbarLinks.classList.toggle('active');
-      });
+      }
 
-      document.addEventListener('click', e => {
-        if (e.target.id !== 'toggle' && e.target.id !== 'mobile-navbar') {
+      function checkClickedOutOfNavbar(event) {
+        if (event.target.id !== 'toggle' && event.target.id !== 'mobile-navbar') {
           $toggle.classList.remove('active');
           $navbarLinks.classList.remove('active');
         }
+      }
+
+      $toggle.addEventListener('click', toggleNavbar);
+
+      document.addEventListener('click', event => {
+        checkClickedOutOfNavbar(event);
       });
     </script>
   </body>
