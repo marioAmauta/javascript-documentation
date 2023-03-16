@@ -24,6 +24,7 @@
     <nav id="navbar">
       <header>
         <a href="#">JavaScript Documentation</a>
+        <div id="toggle"></div>
       </header>
       <div class="navbar-links">
         <a
@@ -97,7 +98,6 @@
           >Reference</a
         >
       </div>
-      <div id="toggle"></div>
     </nav>
     <main id="main-doc">
       <section
@@ -593,22 +593,16 @@ function square(number) {
       const $toggle = document.querySelector('#toggle');
       const $navbarLinks = document.querySelector('.navbar-links');
 
-      function toggleNavbar() {
+      $toggle.addEventListener('click', () => {
         $toggle.classList.toggle('active');
         $navbarLinks.classList.toggle('active');
-      }
+      });
 
-      function checkClickedOutOfNavbar(event) {
+      document.addEventListener('click', event => {
         if (event.target.id !== 'toggle' && event.target.id !== 'navbar') {
           $toggle.classList.remove('active');
           $navbarLinks.classList.remove('active');
         }
-      }
-
-      $toggle.addEventListener('click', toggleNavbar);
-
-      document.addEventListener('click', event => {
-        checkClickedOutOfNavbar(event);
       });
     </script>
   </body>
