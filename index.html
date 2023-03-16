@@ -97,83 +97,6 @@
           >Reference</a
         >
       </div>
-    </nav>
-    <nav id="mobile-navbar">
-      <header>
-        <a href="#">JavaScript Documentation</a>
-      </header>
-      <div class="mobile-navbar-links">
-        <a
-          class="nav-link"
-          href="#Introduction"
-          >Introduction</a
-        >
-        <a
-          class="nav-link"
-          href="#What_you_should_already_know"
-          >What you should already know</a
-        >
-        <a
-          class="nav-link"
-          href="#JavaScript_and_Java"
-          >JavaScript and Java</a
-        >
-        <a
-          class="nav-link"
-          href="#Hello_world"
-          >Hello world</a
-        >
-        <a
-          class="nav-link"
-          href="#Variables"
-          >Variables</a
-        >
-        <a
-          class="nav-link"
-          href="#Declaring_variables"
-          >Declaring variables</a
-        >
-        <a
-          class="nav-link"
-          href="#Variable_scope"
-          >Variable scope</a
-        >
-        <a
-          class="nav-link"
-          href="#Global_variables"
-          >Global variables</a
-        >
-        <a
-          class="nav-link"
-          href="#Constants"
-          >Constants</a
-        >
-        <a
-          class="nav-link"
-          href="#Data_types"
-          >Data types</a
-        >
-        <a
-          class="nav-link"
-          href="#if..._else_statement"
-          >if... else statement</a
-        >
-        <a
-          class="nav-link"
-          href="#While_statement"
-          >While statement</a
-        >
-        <a
-          class="nav-link"
-          href="#Function_declarations"
-          >Function declarations</a
-        >
-        <a
-          class="nav-link"
-          href="#Reference"
-          >Reference</a
-        >
-      </div>
       <div id="toggle"></div>
     </nav>
     <main id="main-doc">
@@ -668,7 +591,7 @@ function square(number) {
     </main>
     <script>
       const $toggle = document.querySelector('#toggle');
-      const $navbarLinks = document.querySelector('.mobile-navbar-links');
+      const $navbarLinks = document.querySelector('.navbar-links');
 
       function toggleNavbar() {
         $toggle.classList.toggle('active');
@@ -676,7 +599,7 @@ function square(number) {
       }
 
       function checkClickedOutOfNavbar(event) {
-        if (event.target.id !== 'toggle' && event.target.id !== 'mobile-navbar') {
+        if (event.target.id !== 'toggle' && event.target.id !== 'navbar') {
           $toggle.classList.remove('active');
           $navbarLinks.classList.remove('active');
         }
